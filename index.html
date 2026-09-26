@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surendra - Creator Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .hire-btn {
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .hire-btn:hover {
+            background-color: #0ea5e9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 120px 20px 60px 20px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h2.section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #f8fafc;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #38bdf8;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background-color: #1e293b;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #f8fafc;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        /* Video Box / Thumbnail Style */
+        .video-box {
+            width: 100%;
+            height: 180px;
+            background: #0f172a;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-weight: bold;
+            color: #f8fafc;
+            margin-bottom: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .views-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .play-icon {
+            font-size: 32px;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .video-title {
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Profile DP Circle */
+        .dp-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #334155;
+            margin-bottom: 12px;
+            border: 3px solid #38bdf8;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* About Section */
+        .about-box {
+            background: #1e293b;
+            border-radius: 14px;
+            padding: 35px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .about-box h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            color: #38bdf8;
+        }
+
+        .about-box p {
+            font-size: 18px;
+            font-style: italic;
+            color: #cbd5e1;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: #1e293b;
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #f8fafc;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .contact-item:hover {
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">Surendra</div>
+        <a href="#contact" class="hire-btn">Hire Me</a>
+    </header>
+
+    <div class="container">
+
+        <!-- Page 1: Top Performing Videos -->
+        <section id="top-videos">
+            <h2 class="section-title">Top Performing Videos</h2>
+            <div class="grid">
+                <!-- Video 1 -->
+                <a href="https://youtube.com/shorts/-tEZPs7jflw?si=2ZmjKAnQizZCPnHt" target="_blank" class="card">
+                    <div class="video-box">
+                        <div class="views-badge">87M Views</div>
+                        <div class="play-icon">▶️</div>
+                        <span style="font-size: 13px; color: #94a3b8;">Click to Play</span>
+                    </div>
+                    <div class="video-title">Apple vs Samsung</div>
+                </a>
+
+                <!-- Video 2 -->
+                <a href="https://youtube.com/shorts/3JzHLqoPx7E?si=NPJgAnj0dKStFOPM" target="_blank" class="card">
+                    <div class="video-box">
+                        <div class="views-badge">41M Views</div>
+                        <div class="play-icon">▶️</div>
+                        <span style="font-size: 13px; color: #94a3b8;">Click to Play</span>
+                    </div>
+                    <div class="video-title">Blinkit vs offline market</div>
+                </a>
+
+                <!-- Video 3 -->
+                <a href="https://youtube.com/shorts/yw7z2XllXZk?si=MLR1TMPK45e2RbhX" target="_blank" class="card">
+                    <div class="video-box">
+                        <div class="views-badge">68M Views</div>
+                        <div class="play-icon">▶️</div>
+                        <span style="font-size: 13px; color: #94a3b8;">Click to Play</span>
+                    </div>
+                    <div class="video-title">Gadgets</div>
+                </a>
+
+                <!-- Video 4 -->
+                <a href="https://www.instagram.com/reel/DPJa6uvkmMH/" target="_blank" class="card">
+                    <div class="video-box">
+                        <div class="views-badge">8.9M Views</div>
+                        <div class="play-icon">▶️</div>
+                        <span style="font-size: 13px; color: #94a3b8;">Click to Play</span>
+                    </div>
+                    <div class="video-title">Zubin da</div>
+                </a>
+
+                <!-- Video 5 -->
+                <a href="https://www.instagram.com/reel/DbGQ4k9PHNb/" target="_blank" class="card">
+                    <div class="video-box">
+                        <div class="views-badge">9M Views</div>
+                        <div class="play-icon">▶️</div>
+                        <span style="font-size: 13px; color: #94a3b8;">Click to Play</span>
+                    </div>
+                    <div class="video-title">Protest</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Page 2: Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Experience Section</h2>
+            <div class="grid">
+                <!-- Tech Master -->
+                <a href="https://youtube.com/@techmasterhq?si=_HwhxU4Oy4dKbNUB" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232787_2.jpg');"></div>
+                    <h3>Tech Master</h3>
+                    <p>33M Subscribers</p>
+                </a>
+                <!-- KK Create -->
+                <a href="https://youtube.com/@kk.create.original?si=CHLXGlVVNl_SbVgK" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232786_2.jpg');"></div>
+                    <h3>KK CREATE</h3>
+                    <p>5M Subscribers</p>
+                </a>
+                <!-- Techog -->
+                <a href="https://www.instagram.com/tech0g" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232807_2.jpg');"></div>
+                    <h3>Techog</h3>
+                    <p>1.5M Followers</p>
+                </a>
+                <!-- Keerthi -->
+                <a href="https://www.instagram.com/keerthi" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232795_2.jpg');"></div>
+                    <h3>Keerthi</h3>
+                    <p>900k Followers</p>
+                </a>
+                <!-- TechGT -->
+                <a href="https://www.instagram.com/techhgt" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232790_2.jpg');"></div>
+                    <h3>TechGT</h3>
+                    <p>300k Followers</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Page 3: My Pages Section -->
+        <section id="my-pages">
+            <h2 class="section-title">My Pages</h2>
+            <div class="grid">
+                <!-- Techgt -->
+                <a href="https://www.instagram.com/techhgt" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232790_2.jpg');"></div>
+                    <h3>Techgt</h3>
+                    <p>300k Followers</p>
+                </a>
+                <!-- GT Vibe -->
+                <a href="https://www.instagram.com/gtviibe" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232780_3.jpg');"></div>
+                    <h3>Gt Vibe</h3>
+                    <p>200k Followers</p>
+                </a>
+                <!-- Mkviibe -->
+                <a href="https://www.instagram.com/mk.viibe" target="_blank" class="card">
+                    <div class="dp-circle" style="background-image: url('1000232785_3.jpg');"></div>
+                    <h3>Mkviibe</h3>
+                    <p>100k Followers</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Page 4: About Me & Contact -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-box">
+                <h3>Content Creator</h3>
+                <p>“The only rule to go viral on social media is that there are no rules.”</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid">
+                <a href="tel:6376862780" class="contact-item">📞 6376862780</a>
+                <a href="mailto:surendrasaran939@gmail.com" class="contact-item">✉️ surendrasaran939@gmail.com</a>
+                <a href="https://www.instagram.com/techhgt" target="_blank" class="contact-item">📸 Instagram: Techhgt</a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
